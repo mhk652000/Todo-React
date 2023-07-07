@@ -1,0 +1,135 @@
+.navBar{
+    margin-left: 30px;
+    margin-top: 10px;
+    display:inline;
+    align-items: center;
+    text-align: left;
+    width: 1000px;
+    background-color: #FFF;
+    height: 47px;
+}
+.box{
+    
+    padding-top: 10px;
+    background-color: #EEF2F5;
+    width: 300px;
+    height: 700px;
+    padding-left: 18px;
+    margin-left: 12px;
+    border-radius: 20px;
+}
+.boxHead{
+    margin-top: 5px;
+    margin-left: 12px;
+}
+.bhIcon{
+    margin-left: 180px;
+    padding-right: 5px;
+}
+
+.allBoxes{
+    display: flex;
+}
+
+.dev{
+    color: #FF2473;
+    font-size: small;
+    margin-right: 2px;
+}
+
+.design{
+    color: #40A737;
+    font-size: small;
+    margin-right: 2px;
+
+
+}
+
+.typo{
+    color: #18B0FF;
+    font-size: small;
+    margin-right: 2px;
+
+
+}
+.cardss{
+    justify-content: left;
+    padding-top: 2px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-left: 12px;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    
+    height: 150px;
+    width: 250px;
+}
+
+#cHead{
+    text-align: left;
+    margin-top: 7px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+#chHead{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 8px;
+    margin-bottom: 0px;
+    font-size: 9px;
+    color: #707070;
+}
+
+#cText{
+    text-align: justify;
+    font-size: small;
+    margin-top: 7px;
+    font-weight:500;
+    margin-left: 10px;
+    margin-right: 22px;
+
+}
+
+
+
+.searchIcon{
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 10px;
+    border: 0px;
+    background-color: #FFF;
+    width:20px;
+    height:15px;
+    color: #707070;
+}
+
+.notiIcon{
+    
+    width: 20px;
+    height: 20px;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+
+.searchInput{
+    border: 0;
+    height: 40px;
+    width: 800px;
+    margin-right: 50px;
+    outline-color: #707070;
+    
+}
+.searchInput::placeholder{
+    font-size: medium;
+}
+.searchInput:focus-visible{
+    border: 0px;
+}
+
+
+
+
