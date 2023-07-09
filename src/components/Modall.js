@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import List from "./List";
 import Modal from "react-modal";
+import { addData } from "../redux/actions";
+import { useDispatch } from "react-redux";
+
+
 const customStyles = {
   content: {
     top: "50%",
@@ -15,8 +19,11 @@ const customStyles = {
 };
 
 function Modall() {
+  const addDataa = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
   const [allTodo,setallTodo] = useState([]);
+
+  
     const [todo, setTodo]=useState({
         type: "",
         heading: "",
@@ -34,6 +41,9 @@ function Modall() {
     }
 
     function handleSubmit(event){
+        
+
+      
         event.preventDefault();
         setallTodo([...allTodo, todo]);
         setTodo({
@@ -41,6 +51,11 @@ function Modall() {
             heading: "",
             text: ""
         });
+        addDataa(addData(allTodo));
+
+        
+
+
     }
 
   return (
