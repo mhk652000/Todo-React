@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import List from "./List";
 import Modal from "react-modal";
 import { addData } from "../redux/actions";
 import { useDispatch } from "react-redux";
+import {AiOutlinePlus} from 'react-icons/ai';
+
 
 
 const customStyles = {
@@ -41,26 +42,19 @@ function Modall() {
     }
 
     function handleSubmit(event){
-        
-
-      
         event.preventDefault();
         setallTodo([...allTodo, todo]);
+        addDataa(addData(todo));
         setTodo({
             type: "",
             heading: "",
             text: ""
         });
-        addDataa(addData(allTodo));
-
-        
-
-
     }
 
   return (
-    <div className="App">
-      <button onClick={setModalOpen}>Open Modal</button>
+    <div className="Modallll">
+      <button  className='modalButton' onClick={setModalOpen}><AiOutlinePlus className='bhIcon'/></button>
       <Modal
         isOpen={modalOpen}
         onRequestClose={() => setModalOpen(false)}
@@ -89,7 +83,6 @@ function Modall() {
 
         <button type='submit'>ADD</button>
       </form>
-        <List data={allTodo}/>
     </div>
 
         <button onClick={() => setModalOpen(false)}>Close Modal</button>

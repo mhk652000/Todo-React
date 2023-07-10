@@ -2,29 +2,43 @@
 import React, {useState} from 'react'
 import Cards from './Cards';
 import './nav.css'
-import {AiOutlinePlus} from 'react-icons/ai'
-import {BsThreeDots} from 'react-icons/bs'
+
+import {BsThreeDots} from 'react-icons/bs';
+import { IconButton } from "rsuite";
 import Modall from './Modall';
 
-export default function Boxes({ dat }) {
+export default function Boxes(props) {
 
-  
-  if (!dat || !Array.isArray(dat)) {
-    return null;
-  }
+  function boxSelect(){
 
-  function displayer(data, index) {
-    return <Cards key={index} dat={data} />;
-  }
+    if(props.status=="Start"){
+      return <div className='box'>
+        <div className='boxesHead'>
+        <h4 className='boxHead' >{props.status}</h4>
+        <Modall />
+        </div>
+        
+        <Cards status={props.status}/>
+      </div>
+    }
 
- 
-  return (
+    else {
+      return <div className='box'>
+                  <div className='boxesHead'>
+                    <h4 className='boxHead' >{props.status}</h4>
+                  </div>
+                  <Cards status={props.status} />
+                </div>
+    }
+
     
-    <div className='box'>
-      <h4 className='boxHead'>To Do {<AiOutlinePlus className='bhIcon'/> }{<Modall/>}</h4>
-      {dat.map(displayer)}
-    </div>
-  );
+
+  }
+  
+  return <div>
+    {boxSelect()}
+  </div>
+
 }
 
 

@@ -1,6 +1,7 @@
 
 export const ADD_DATA = 'ADD_DATA';
 export const DELETE_DATA = 'DELETE_DATA';
+export const UPDATE_STATUS = 'UPDATE_STATUS';
 
 
 
@@ -17,9 +18,21 @@ export const addData = (data) => {
   };
 };
 
+
+
 export const deleteData = (dataId) => {
   return {
     type: DELETE_DATA,
-    dataId:dataId
+    payload:dataId,
+  };
+};
+
+
+
+
+export const updateStatus = (id, newStatus) => {
+  return {
+    type: UPDATE_STATUS,
+    payload: { id, newStatus },
   };
 };

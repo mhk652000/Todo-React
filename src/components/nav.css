@@ -23,9 +23,11 @@
     margin-left: 12px;
 }
 .bhIcon{
-    margin-left: 180px;
-    padding-right: 5px;
+    font-size: 20px;
+   margin-top: 5px;
 }
+
+
 
 .allBoxes{
     display: flex;
@@ -106,6 +108,24 @@
     color: #707070;
 }
 
+.boxesHead{
+    display: flex;
+   
+    
+}
+
+.Modallll{
+    height: 25px;
+    width: 25px;
+}
+
+.modalButton{
+    height: 25px;
+    width: 25px;
+    border: 0;
+    margin-left: 200px;
+    
+}
 .notiIcon{
     
     width: 20px;
@@ -114,6 +134,27 @@
     padding-left: 15px;
 }
 
+.cardButtons{
+    display: flex;
+    justify-content: space-between;
+
+}
+.carrrdButton{
+    border:0;
+    
+    background-color: #fff;
+}
+
+.delButton{
+    color: maroon;
+    font-size: 13px;
+}
+
+.doneButton{
+    margin-left: 100px;
+    color:green;
+    font-size: 15px;
+}
 
 .searchInput{
     border: 0;

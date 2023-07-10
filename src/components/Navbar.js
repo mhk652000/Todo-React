@@ -10,6 +10,10 @@ import options from "./options";
 import options2 from "./options2";
 import options3 from "./options3";
 import { useSelector } from "react-redux";
+import Modall from "./Modall";
+import { Card } from "react-bootstrap";
+import Cards from "./Cards";
+import List from "./List";
 
 export default function Navbar() {
   const data = useSelector((state) => state);
@@ -25,9 +29,11 @@ export default function Navbar() {
       </form>
       <Dropdown />
       <div className="allBoxes">
-        <Boxes dat={options} />
-        <Boxes dat={options2} />
-        <Boxes dat={options3} />
+        <Boxes status="Start"/>
+        <Boxes status="In Progress"/>
+        <Boxes status="Completed"/>
+        {/* <Boxes dat={options2} />
+        <Boxes dat={options3} /> */}
       </div>
     </div>
   );

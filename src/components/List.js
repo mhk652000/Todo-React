@@ -21,7 +21,6 @@ export default function List(props) {
   }
 
   return <div>
-    <h2>hehehe</h2>
     {/* {props.data.map((item)=>displayer(item))} */}
     {props.data.map(displayer)}
   </div>
