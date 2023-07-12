@@ -1,6 +1,8 @@
-.App {
+/* .App {
   
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -24,6 +26,8 @@
 }
 
 
+
+
 ul{
   list-style: none;
 }
@@ -35,6 +39,7 @@ ul{
 
 .sideBar{
   padding-left: 0px;
+  height: 100%;
   margin-top: 0px;
   text-align: center;
   width: 200px;
@@ -103,11 +108,141 @@ ul{
   margin-right: 25px;
 }
 
+ */
+
+
+
+ .App {
+  /* Add any specific styles for the .App class here */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.bars {
+  display: flex;
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.sideBar {
+  padding-left: 0;
+  height: 100%;
+  margin-top: 0;
+  text-align: center;
+  width: 200px;
+  height: 850px;
+  background: #fff;
+  box-shadow: 5.646485328674316px -0.8066408038139343px 9.679689407348633px 0px rgba(0, 0, 0, 0.11);
+}
+
+.sideBar > ul {
+  padding: 0;
+  text-align: center;
+  margin-top: 0;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.s-Head {
+  color: black;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 0;
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+
+.barToggle{
+    height: 10px;
+    width: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    background-color: #fff;
+    border: 0;
+}
+
+.sideBar > ul > li {
+  color: #707070;
+  width: 100%;
+  height: 34.686px;
+  flex-shrink: 0;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.sideBar > ul > li:hover {
+  color: black;
+  background-color: rgba(67, 145, 237, 0.10);
+}
+
+.sIcon:hover {
+  color: black;
+  background-color: rgba(67, 145, 237, 0.10);
+}
+
+.s-Bottom {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 450px;
+}
+
+.icon {
+  margin-left: 20px;
+  margin-right: 25px;
+}
 
 
 
 
+@media (max-width: 900px) {
+  .App-header {
+    min-height: auto;
+    padding: 10px;
+  }
 
+  .sideBar {
+    
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
 
+  .sideBar > ul > li {
+    justify-content: center;
+  }
 
-
+  .s-Bottom {
+    margin-top: 20px;
+  }
+}

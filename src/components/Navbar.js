@@ -6,14 +6,7 @@ import { BiImageAlt } from "react-icons/bi";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import Boxes from "./Boxes";
-import options from "./options";
-import options2 from "./options2";
-import options3 from "./options3";
 import { useSelector } from "react-redux";
-import Modall from "./Modall";
-import { Card } from "react-bootstrap";
-import Cards from "./Cards";
-import List from "./List";
 
 export default function Navbar() {
   const data = useSelector((state) => state);

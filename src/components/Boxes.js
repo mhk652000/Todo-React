@@ -9,6 +9,7 @@ import Modall from './Modall';
 
 export default function Boxes(props) {
 
+  
   function boxSelect(){
 
     if(props.status=="Start"){

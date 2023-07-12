@@ -5,7 +5,7 @@ export default function cardData(data = [], action) {
       return [action.data, ...data];
 
     case "UPDATE_STATUS":
-        const { id, newStatus } = action.payload;
+      const { id, newStatus } = action.payload;
       const updatedCardData = data.map((item) => {
         if (item.id === id) {
           return {
@@ -18,13 +18,29 @@ export default function cardData(data = [], action) {
       return updatedCardData;
 
     case "DELETE_DATA":
-      const itemId=action.payload;
-      const updatedData= data.filter((item)=>{
-          return item.id!==itemId;
-        });
-        return updatedData;
+      const itemId = action.payload;
+      const updatedData = data.filter((item) => {
+        return item.id !== itemId;
+      });
+      return updatedData;
 
+    case "UPDATE_DATA":
+      const { newid, newType, newHeading, newText } = action.payload;
+      console.log("rdueddd", newid);
+      var editedDataa = data.map((item) => {
+        if (item.id === newid) {
+          return {
+            ...item,
+            type: newType,
+            heading: newHeading,
+            text: newText,
+          };
+        }
+        return item;
+      });
+      console.log("EDITED DATA: ", editedDataa);
+      return editedDataa;
     default:
-      return [];
+      return data;
   }
 }

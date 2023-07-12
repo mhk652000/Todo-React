@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import { addData } from "../redux/actions";
+
+import { editData } from "../redux/actions";
 import { useDispatch } from "react-redux";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiTwotoneEdit } from "react-icons/ai";
 
 const customStyles = {
   content: {
@@ -22,15 +23,15 @@ const customStyles = {
   },
 };
 
-function Modall() {
-  const addDataa = useDispatch();
+function EditModal(props) {
+  const edittData = useDispatch();
   const [modalOpen, setModalOpen] = useState(false);
-  const [allTodo, setallTodo] = useState([]);
-
   const [todo, setTodo] = useState({
-    type: "",
-    heading: "",
-    text: "",
+    type: props?.modalData?.type,
+    heading: props?.modalData?.heading,
+    text: props?.modalData?.text,
+    id: props.modalData.id,
+    status: props.modalData.status,
   });
 
   function handleChange(event) {
@@ -39,35 +40,32 @@ function Modall() {
     setTodo({
       ...todo,
       [event.target.name]: event.target.value,
-      id: Math.floor(Math.random() * 1000),
-      status: "Start",
+      id: props.modalData.id,
+      status: props.modalData.status,
     });
   }
 
-
-
-  function handleSubmit(event) {
-    
-    event.preventDefault();
-    setallTodo([...allTodo, todo]);
-    addDataa(addData(todo));
+  const handleClick = (e) => {
     setTodo({
-      type: "",
-      heading: "",
-      text: "",
+      ...todo,
+      type: props?.modalData?.type ? props?.modalData?.type : "",
+      heading: props?.modalData?.heading ? props?.modalData?.heading : "",
+      text: props?.modalData?.text ? props?.modalData?.text : "",
     });
-    setModalOpen(false);
-  }
-
-  const handleClick=(e)=>{
+    e.preventDefault();
     setModalOpen(true);
-  }
-  
+  };
+
+  const editDataTodo = (e) => {
+    e.preventDefault();
+    edittData(editData(todo.id, todo.type, todo.heading, todo.text));
+    setModalOpen(false);
+  };
 
   return (
     <div className="Modallll">
-      <button className="modalButton" onClick={handleClick}>
-        <AiOutlinePlus className="bhIcon" />
+      <button className="modalButton carrrdButton" onClick={handleClick}>
+        <AiTwotoneEdit className="editButton" />
       </button>
       <Modal
         isOpen={modalOpen}
@@ -76,44 +74,41 @@ function Modall() {
         
       >
         <div className='modalForm'>
-          <h3 className='modalHead'>Add a new task</h3>
-          <form>
+        <h3 className='modalHead'>Edit the Task</h3>
+          <form >
           <label className='modalLabelType'>
             <h5>Type</h5>
             <input
               value={todo.type}
               onChange={handleChange}
-              placeholder="Development, Typography etc."
+              placeholder="Type"
               name="type"
               className='modalInput'
             />
-          </label>
+            </label>
             
-          <label className='modalLabelHeading'>
-          <h5>Heading</h5> 
-          <input
+            <label className='modalLabelHeading'>
+            <h5>Heading</h5>
+              <input
               value={todo.heading}
               onChange={handleChange}
               placeholder="Heading"
               name="heading"
-              className='modalInput'
-            />
-          </label>
-            
-
-          <label className='modalLabelText'>
-          <h5>Text</h5>
-          <input
+              className='modalInput'/>
+            </label>
+              
+            <label className='modalLabelText'>
+            <h5>Text</h5>
+            <input
               value={todo.text}
               onChange={handleChange}
               placeholder="Text"
               name="text"
-              className='modalText'
+              className='modalInput'
             />
-          </label>
+            </label>
             
-            <button className='modalButt' onClick={(e) => handleSubmit(e)}>ADD</button>
-            
+            <button className='modalButt' onClick={(e) => editDataTodo(e)}>Edit</button>
           </form>
         </div>
       </Modal>
@@ -121,6 +116,4 @@ function Modall() {
   );
 }
 
-export default Modall;
-
-
+export default EditModal;

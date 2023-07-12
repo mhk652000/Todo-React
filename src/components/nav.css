@@ -1,22 +1,112 @@
 .navBar{
-    margin-left: 30px;
-    margin-top: 10px;
+    margin-left: 3%;
+    margin-top: 1%;
     display:inline;
     align-items: center;
     text-align: left;
-    width: 1000px;
+    width: 100%;
     background-color: #FFF;
     height: 47px;
 }
+
 .box{
-    
     padding-top: 10px;
     background-color: #EEF2F5;
     width: 300px;
-    height: 700px;
+    height: 100%;
     padding-left: 18px;
     margin-left: 12px;
     border-radius: 20px;
+}
+
+.modalForm{
+    align-items: center;
+}
+
+.modalLabelType{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: right;
+
+}
+.modalLabelType>h5{
+    margin-right: 11.5%;
+}
+.modalLabelHeading{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+.modalLabelHeading>h5{
+    margin-right: 6%;
+}
+
+.modalLabelText{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: right;
+}
+
+.modalLabelText>h5{
+    margin-right: 12%;
+}
+.modalInput{
+    
+    border: 0;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 5px;
+    width: 90%;
+}
+.modalButt{
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 40%;
+    margin-top: 10%;
+    font-weight: 500;
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 24;
+  -moz-border-radius: 24;
+  border-radius: 24px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 4px 15px 4px 15px;
+  text-decoration: none;
+  border:0;
+}
+
+.modalButt:hover{
+    background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+.modalHead{
+    margin-left: 30%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.modalText{
+    border: 0;
+    margin: 4px;
+    padding: 8px;
+    height: 50px;
+    border-radius: 5px;
+    width: 90%;
 }
 .boxHead{
     margin-top: 5px;
@@ -31,6 +121,7 @@
 
 .allBoxes{
     display: flex;
+    
 }
 
 .dev{
@@ -54,6 +145,10 @@
 
 
 }
+button{
+    cursor: pointer;
+}
+
 .cardss{
     justify-content: left;
     padding-top: 2px;
@@ -109,9 +204,9 @@
 }
 
 .boxesHead{
-    display: flex;
-   
-    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Modallll{
@@ -120,11 +215,12 @@
 }
 
 .modalButton{
-    height: 25px;
-    width: 25px;
-    border: 0;
-    margin-left: 200px;
-    
+
+  height: 25px;
+  width: 25px;
+  border: 0;
+    margin-left: -30px; 
+
 }
 .notiIcon{
     
@@ -140,20 +236,39 @@
 
 }
 .carrrdButton{
+    margin-bottom: -25px;
+    margin-left: 9px;
     border:0;
-    
     background-color: #fff;
 }
 
+.editButton{
+    
+    height: 20px;
+    width: 20px;
+    background-color: #FFF;
+    color: #707070;
+}
+
+
+
+.threeButtons{
+    display: flex;
+}
 .delButton{
-    color: maroon;
-    font-size: 13px;
+    margin-top: 25px;
+    height: 20px;
+    width: 20px;
+    color: #707070;
+    font-size: 5px;
 }
 
 .doneButton{
-    margin-left: 100px;
-    color:green;
-    font-size: 15px;
+    margin-top: 25px;
+    margin-left: 135px;
+    color: #707070;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 .searchInput{
@@ -171,6 +286,109 @@
     border: 0px;
 }
 
+
+
+@media (max-width: 900px) {
+  .navBar {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .allBoxes {
+    
+    display: block;
+  }
+ 
+  .modalForm{
+    margin-left: 0;
+  }
+
+  .box {
+    padding-top: 10px;
+  background-color: #eef2f5;
+  padding-left: 18px;
+  margin-left: 8px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+    width: 250px;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .modalForm {
+    align-items: flex-start;
+  }
+
+  .modalLabelType > h5 {
+    margin-right: 0;
+  }
+
+  .modalLabelHeading > h5 {
+    margin-right: 0;
+  }
+
+  .modalLabelText > h5 {
+    margin-right: 0;
+  }
+
+  .modalButt {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .modalHead {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .modalText {
+    width: 100%;
+  }
+
+  .cardss {
+    width: 220px;
+    flex-grow: 0;
+    max-height: 160px; /* Adjust the value as needed */
+  overflow-y: auto;
+    margin-left: 0;
+  }
+
+  .chHead {
+    margin-left: 0;
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  .cardButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .doneButton {
+    margin-left: 40px;
+    margin-right: -5px;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+
+
+
+
+
+ 
+
+
+  
 
 
 

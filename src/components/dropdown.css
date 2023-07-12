@@ -1,5 +1,6 @@
-.dropdown {
+/* .dropdown {
     position: relative;
+    
     display: flex;
     background-color: #fff;
     border:0px;
@@ -42,5 +43,122 @@
   
   .dropdown-menu li:hover {
     background-color: #f2f2f2;
+  }
+   */
+
+
+
+
+   .dropdown {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    border: 0px;
+    margin-left: 12px;
+  }
+  
+  .dropIcon {
+    height: 10px;
+    width: 15px;
+  }
+  
+  .dropdown-toggle {
+    margin-left: 822px;
+    padding: 10px;
+    background-color: #fff;
+    border: 0px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    margin-left: 85%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100px;
+    padding: 0;
+    list-style-type: none;
+    background-color: #fff;
+    border: 0px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-menu li {
+    padding: 15px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f2f2f2;
+  }
+  
+  /* Media Queries */
+  /* Small screens */
+@media (max-width: 576px) {
+  .dropdown-toggle {
+    margin-left: 12px;
+  }
+
+  .dropdown-menu {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 577px) and (max-width: 992px) {
+  .dropdown-toggle {
+    margin-left: 12px;
+  }
+
+  .dropdown-menu {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 993px) and (max-width: 1200px) {
+  /* Add styles specific to large screens if needed */
+}
+
+/* Extra large screens */
+@media (min-width: 1201px) {
+  /* Add styles specific to extra large screens if needed */
+}
+
+  
+  /* Small screens */
+  @media (max-width: 576px) {
+    .dropdown-toggle {
+      margin-left: 12px;
+    }
+  
+    .dropdown-menu {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  
+  /* Medium screens */
+  @media (min-width: 577px) and (max-width: 992px) {
+    .dropdown-toggle {
+      margin-left: 12px;
+    }
+  
+    .dropdown-menu {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+  
+  /* Large screens */
+  @media (min-width: 993px) and (max-width: 1200px) {
+    /* No changes needed for large screens */
+  }
+  
+  /* Extra large screens */
+  @media (min-width: 1201px) {
+    /* No changes needed for extra large screens */
   }
   
