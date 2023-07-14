@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-
+import {ImCross} from "react-icons/im";
 import { editData } from "../redux/actions";
 import { useDispatch } from "react-redux";
-import { AiOutlinePlus, AiTwotoneEdit } from "react-icons/ai";
+import { AiTwotoneEdit } from "react-icons/ai";
 
 const customStyles = {
   content: {
@@ -55,7 +55,10 @@ function EditModal(props) {
     e.preventDefault();
     setModalOpen(true);
   };
-
+  const handleClose=(e)=>{
+    e.preventDefault();
+    setModalOpen(false);
+  }
   const editDataTodo = (e) => {
     e.preventDefault();
     edittData(editData(todo.id, todo.type, todo.heading, todo.text));
@@ -74,6 +77,9 @@ function EditModal(props) {
         
       >
         <div className='modalForm'>
+        <button className="cancelButton" onClick={handleClose}>
+        <ImCross className="crossIcon" />
+      </button>
         <h3 className='modalHead'>Edit the Task</h3>
           <form >
           <label className='modalLabelType'>
@@ -83,7 +89,7 @@ function EditModal(props) {
               onChange={handleChange}
               placeholder="Type"
               name="type"
-              className='modalInput'
+              className='modalTypeInput'
             />
             </label>
             
@@ -94,7 +100,7 @@ function EditModal(props) {
               onChange={handleChange}
               placeholder="Heading"
               name="heading"
-              className='modalInput'/>
+              className='modalHeadingInput'/>
             </label>
               
             <label className='modalLabelText'>
@@ -104,7 +110,7 @@ function EditModal(props) {
               onChange={handleChange}
               placeholder="Text"
               name="text"
-              className='modalInput'
+              className='modalText'
             />
             </label>
             

@@ -25,8 +25,7 @@ export default function Navbar() {
         <Boxes status="Start"/>
         <Boxes status="In Progress"/>
         <Boxes status="Completed"/>
-        {/* <Boxes dat={options2} />
-        <Boxes dat={options3} /> */}
+
       </div>
     </div>
   );

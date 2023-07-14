@@ -1,15 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { updateStatus, deleteData } from "../redux/actions";
+import { updateStatus } from "../redux/actions";
 import "./nav.css";
-import { MdDelete } from "react-icons/md";
 import { GoDotFill } from "react-icons/go";
 import { IoCheckmarkDoneSharp } from "react-icons/io5";
 import EditModal from "./EditModal";
+import DeleteModal from "./DeleteModal";
+
+
 
 const Cards = (props) => {
+  
   const dispatch = useDispatch();
-  const deleter = useDispatch();
   const data = useSelector((state) => state);
   console.log("card data", data);
 
@@ -34,10 +36,6 @@ const Cards = (props) => {
       dispatch(updateStatus(dataItem.id, newStatus));
     }
 
-    function handleDelete() {
-      deleter(deleteData(dataItem.id));
-    }
-
     if (props.status === dataItem.status) {
       return (
         <div className="cardss">
@@ -58,13 +56,13 @@ const Cards = (props) => {
               </button>
             )}
 
+            
             {props.status === "Start" && (
-              <button className="carrrdButton" onClick={handleDelete}>
-                <MdDelete className="delButton" />
-              </button>
+              <DeleteModal itemId={dataItem.id} />
+              
             )}
           </div>
-          {props.status == "Start" && <EditModal modalData={dataItem} />}
+          {props.status === "Start" && <EditModal modalData={dataItem} />}
         </div>
       );
     }

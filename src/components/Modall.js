@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { addData } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { AiOutlinePlus } from "react-icons/ai";
-
+import {ImCross} from "react-icons/im";
 const customStyles = {
   content: {
     position: "fixed",
@@ -61,12 +61,18 @@ function Modall() {
 
   const handleClick=(e)=>{
     setModalOpen(true);
+    
+  }
+
+  const handleClose=(e)=>{
+    e.preventDefault();
+    setModalOpen(false);
   }
   
 
   return (
     <div className="Modallll">
-      <button className="modalButton" onClick={handleClick}>
+      <button className="modalButton" onClick={(e)=>handleClick(e)}>
         <AiOutlinePlus className="bhIcon" />
       </button>
       <Modal
@@ -76,6 +82,9 @@ function Modall() {
         
       >
         <div className='modalForm'>
+        <button className="cancelButton" onClick={handleClose}>
+        <ImCross className="crossIcon" />
+      </button>
           <h3 className='modalHead'>Add a new task</h3>
           <form>
           <label className='modalLabelType'>
@@ -85,7 +94,7 @@ function Modall() {
               onChange={handleChange}
               placeholder="Development, Typography etc."
               name="type"
-              className='modalInput'
+              className='modalTypeInput'
             />
           </label>
             
@@ -94,9 +103,9 @@ function Modall() {
           <input
               value={todo.heading}
               onChange={handleChange}
-              placeholder="Heading"
+              placeholder="Task"
               name="heading"
-              className='modalInput'
+              className='modalHeadingInput'
             />
           </label>
             
@@ -106,7 +115,7 @@ function Modall() {
           <input
               value={todo.text}
               onChange={handleChange}
-              placeholder="Text"
+              placeholder="Write your Task details"
               name="text"
               className='modalText'
             />
